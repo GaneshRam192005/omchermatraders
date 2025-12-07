@@ -70,8 +70,8 @@ export default function Header() {
               className="h-12 w-12 object-contain" /* change size here */
             />
             <div>
-              <span className="block font-semibold text-gray-800">Omcherma Traders</span>
-              <span className="block text-xs text-gray-500">Quality · Trust · Service</span>
+              <span className="block font-semibold text-gray-800">Om Cherma Traders</span>
+              
             </div>
           </div>
 
