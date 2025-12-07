@@ -1,52 +1,52 @@
 // src/components/ContactSection.jsx
 import React from "react";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-16 px-4 bg-white"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-white"
       data-aos="fade-up"
+      aria-labelledby="contact-heading"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+        <div className="mb-10 text-center">
+          <h2 id="contact-heading" className="text-2xl sm:text-3xl font-semibold text-gray-900">
             Contact Us
           </h2>
-          <p className="text-sm text-gray-600 mt-1">
-            We’re here to assist with all material enquiries
-          </p>
+          <p className="text-sm text-gray-600 mt-2">We’re here to assist with all material enquiries</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Info Cards */}
-          <div className="space-y-6" data-aos="fade-right">
+          <div className="space-y-6" data-aos="fade-right" role="region" aria-label="Contact details">
             {/* Address */}
-            <div className="flex items-start space-x-5 p-6 border border-gray-100 rounded-xl bg-white shadow-sm hover:shadow-md transition">
-              <div className="w-14 h-14 rounded-xl bg-gray-900 flex items-center justify-center text-white text-xl">
+            <div className="flex items-start space-x-4 p-5 border border-gray-100 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gray-900 flex items-center justify-center text-white text-lg sm:text-xl">
                 <FaMapMarkerAlt />
               </div>
               <div>
                 <h3 className="font-bold text-lg text-gray-900">Address</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  Om Cherma Traders<br />
-                  Cement • Electrical Items • Steel<br />
+                <p className="text-sm text-gray-600 leading-relaxed mt-1">
+                  Om Cherma Traders
+                  <br />
+                  Cement • Electrical Items • Steel
+                  <br />
                   Tamil Nadu, India
                 </p>
               </div>
             </div>
 
             {/* Phone */}
-            <div className="flex items-start space-x-5 p-6 border border-gray-100 rounded-xl bg-white shadow-sm hover:shadow-md transition">
-              <div className="w-14 h-14 rounded-xl bg-gray-900 flex items-center justify-center text-white text-xl">
+            <div className="flex items-start space-x-4 p-5 border border-gray-100 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gray-900 flex items-center justify-center text-white text-lg sm:text-xl">
                 <FaPhone />
               </div>
               <div>
                 <h3 className="font-bold text-lg text-gray-900">Phone</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed mt-1">
                   <a
                     href="tel:+918489047501"
                     className="text-gray-900 font-semibold hover:underline"
@@ -60,13 +60,13 @@ const ContactSection = () => {
             </div>
 
             {/* Email */}
-            <div className="flex items-start space-x-5 p-6 border border-gray-100 rounded-xl bg-white shadow-sm hover:shadow-md transition">
-              <div className="w-14 h-14 rounded-xl bg-gray-900 flex items-center justify-center text-white text-xl">
+            <div className="flex items-start space-x-4 p-5 border border-gray-100 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gray-900 flex items-center justify-center text-white text-lg sm:text-xl">
                 <FaEnvelope />
               </div>
               <div>
                 <h3 className="font-bold text-lg text-gray-900">Email</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 mt-1">
                   <a
                     href="mailto:tradersomcherma@gmail.com"
                     className="text-gray-900 font-semibold hover:underline"
@@ -78,21 +78,26 @@ const ContactSection = () => {
             </div>
 
             {/* WhatsApp Button */}
-            <a
-              href="https://wa.me/918489047501?text=Hi,%20I'm%20interested%20in%20your%20products"
-              target="_blank"
-              rel="noreferrer"
-              className="w-full inline-flex items-center justify-center px-6 py-4 rounded-xl bg-green-600 text-white font-semibold text-lg shadow-sm hover:bg-green-700 transition"
-            >
-              <FaWhatsapp className="text-2xl mr-3" />
-              WhatsApp Us
-            </a>
+            <div className="mt-2">
+              <a
+                href="https://wa.me/918489047501?text=Hi,%20I'm%20interested%20in%20your%20products"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3.5 rounded-xl bg-green-600 text-white font-semibold text-lg shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300 transition"
+                aria-label="Chat with us on WhatsApp"
+              >
+                <FaWhatsapp className="text-2xl mr-3" />
+                WhatsApp Us
+              </a>
+            </div>
           </div>
 
           {/* Map */}
           <div
-            className="rounded-xl overflow-hidden border border-gray-200 shadow-md h-[450px]"
+            className="rounded-xl overflow-hidden border border-gray-200 shadow-md h-64 sm:h-80 md:h-[450px]"
             data-aos="fade-left"
+            role="region"
+            aria-label="Location map"
           >
             <iframe
               title="Om Cherma Traders Location"
@@ -103,7 +108,8 @@ const ContactSection = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="transition-all"
+              className="w-full h-full"
+              aria-hidden={false}
             ></iframe>
           </div>
         </div>
