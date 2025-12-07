@@ -5,15 +5,16 @@ import heroImage from "../assets/hero.avif";
 
 export default function HeroSection() {
   return (
+    // Add padding-top equal to header height (h-16 -> 4rem). Use pt-20 for more breathing room on large screens.
     <section
       id="home"
-      className="relative bg-white min-h-[70vh] md:min-h-[78vh] flex items-center"
+      className="relative bg-white min-h-[70vh] md:min-h-[78vh] flex items-center pt-16 md:pt-20 overflow-x-hidden"
       aria-label="Home"
     >
-      {/* Background image */}
+      {/* Background image - ensure no horizontal overflow by using bg-cover + bg-center + no-repeat */}
       <div
-        className="absolute inset-0 bg-center bg-cover transform-gpu"
-        style={{ backgroundImage: `url(${heroImage})`, willChange: 'transform' }}
+        className="absolute inset-0 bg-center bg-cover bg-no-repeat transform-gpu"
+        style={{ backgroundImage: `url(${heroImage})`, willChange: "transform" }}
         aria-hidden
       />
 
@@ -23,7 +24,7 @@ export default function HeroSection() {
         aria-hidden
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-20 lg:py-28">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left: Content */}
           <motion.div
@@ -32,7 +33,6 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="order-2 lg:order-1 text-white"
           >
-            {/* Logo: mark + wordmark (inline SVG) */}
             <div className="flex items-center gap-3 mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 shadow-sm">
                 <svg
@@ -54,17 +54,14 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight tracking-tight drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]">
               Quality construction materials, delivered reliably
             </h1>
 
-            {/* Subline */}
             <p className="mt-4 max-w-xl text-gray-100 text-sm md:text-base leading-relaxed drop-shadow-[0_6px_18px_rgba(0,0,0,0.45)]">
               From high-strength cement and industrial-grade steel to dependable electrical supplies — retail or bulk, backed by expert advice and fast delivery.
             </p>
 
-            {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 max-w-sm">
               <a
                 href="#contact"
@@ -85,7 +82,6 @@ export default function HeroSection() {
               </a>
             </div>
 
-            {/* Trust / Stats - glass card */}
             <div className="mt-10 grid grid-cols-3 gap-4 max-w-md">
               <div className="bg-white/90 backdrop-blur-md rounded-2xl p-3 text-center shadow-xl">
                 <div className="text-lg md:text-xl font-semibold text-gray-900">500+</div>
@@ -104,8 +100,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right: Visual card - subtle product composition */}
-          
+          {/* Right area intentionally left for your product card / visuals */}
         </div>
       </div>
     </section>

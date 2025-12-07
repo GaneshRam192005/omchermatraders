@@ -1,5 +1,23 @@
 @import "tailwindcss";
 /* Your custom styles from <style> tag */
+/* Prevent accidental horizontal scroll */
+html, body, #root {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Ensure all elements use border-box sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Make sure images & background images don't overflow */
+img, picture, .bg-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 :root {
 
   
